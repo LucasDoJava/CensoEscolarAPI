@@ -1,0 +1,254 @@
+[
+  {
+    "codMesorregiao":2101,
+    "mesorregiao":"Norte Maranhense",
+    "codUF":21,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2102,
+    "mesorregiao":"Oeste Maranhense",
+    "codUF":21,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2103,
+    "mesorregiao":"Centro Maranhense",
+    "codUF":21,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2104,
+    "mesorregiao":"Leste Maranhense",
+    "codUF":21,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2105,
+    "mesorregiao":"Sul Maranhense",
+    "codUF":21,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2201,
+    "mesorregiao":"Norte Piauiense",
+    "codUF":22,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2202,
+    "mesorregiao":"Centro-Norte Piauiense",
+    "codUF":22,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2203,
+    "mesorregiao":"Sudoeste Piauiense",
+    "codUF":22,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2204,
+    "mesorregiao":"Sudeste Piauiense",
+    "codUF":22,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2301,
+    "mesorregiao":"Noroeste Cearense",
+    "codUF":23,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2302,
+    "mesorregiao":"Norte Cearense",
+    "codUF":23,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2303,
+    "mesorregiao":"Metropolitana de Fortaleza",
+    "codUF":23,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2304,
+    "mesorregiao":"Sertões Cearenses",
+    "codUF":23,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2305,
+    "mesorregiao":"Jaguaribe",
+    "codUF":23,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2306,
+    "mesorregiao":"Centro-Sul Cearense",
+    "codUF":23,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2307,
+    "mesorregiao":"Sul Cearense",
+    "codUF":23,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2401,
+    "mesorregiao":"Oeste Potiguar",
+    "codUF":24,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2402,
+    "mesorregiao":"Central Potiguar",
+    "codUF":24,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2403,
+    "mesorregiao":"Agreste Potiguar",
+    "codUF":24,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2404,
+    "mesorregiao":"Leste Potiguar",
+    "codUF":24,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2501,
+    "mesorregiao":"Sertão Paraibano",
+    "codUF":25,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2502,
+    "mesorregiao":"Borborema",
+    "codUF":25,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2503,
+    "mesorregiao":"Agreste Paraibano",
+    "codUF":25,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2504,
+    "mesorregiao":"Mata Paraibana",
+    "codUF":25,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2601,
+    "mesorregiao":"Sertão Pernambucano",
+    "codUF":26,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2602,
+    "mesorregiao":"São Francisco Pernambucano",
+    "codUF":26,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2603,
+    "mesorregiao":"Agreste Pernambucano",
+    "codUF":26,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2604,
+    "mesorregiao":"Mata Pernambucana",
+    "codUF":26,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2605,
+    "mesorregiao":"Metropolitana de Recife",
+    "codUF":26,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2701,
+    "mesorregiao":"Sertão Alagoano",
+    "codUF":27,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2702,
+    "mesorregiao":"Agreste Alagoano",
+    "codUF":27,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2703,
+    "mesorregiao":"Leste Alagoano",
+    "codUF":27,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2801,
+    "mesorregiao":"Sertão Sergipano",
+    "codUF":28,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2802,
+    "mesorregiao":"Agreste Sergipano",
+    "codUF":28,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2803,
+    "mesorregiao":"Leste Sergipano",
+    "codUF":28,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2901,
+    "mesorregiao":"Extremo Oeste Baiano",
+    "codUF":29,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2902,
+    "mesorregiao":"Vale São-Franciscano da Bahia",
+    "codUF":29,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2903,
+    "mesorregiao":"Centro Norte Baiano",
+    "codUF":29,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2904,
+    "mesorregiao":"Nordeste Baiano",
+    "codUF":29,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2905,
+    "mesorregiao":"Metropolitana de Salvador",
+    "codUF":29,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2906,
+    "mesorregiao":"Centro Sul Baiano",
+    "codUF":29,
+    "regiao":"Nordeste"
+  },
+  {
+    "codMesorregiao":2907,
+    "mesorregiao":"Sul Baiano",
+    "codUF":29,
+    "regiao":"Nordeste"
+  }
+]

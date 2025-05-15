@@ -1,0 +1,1318 @@
+[
+    {
+        "codMicrorregiao": 21001,
+        "microrregiao": "Litoral Ocidental Maranhense",
+        "codMesorregiao": 2101,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21002,
+        "microrregiao": "Aglomeração Urbana de São Luís",
+        "codMesorregiao": 2101,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21003,
+        "microrregiao": "Rosário",
+        "codMesorregiao": 2101,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21004,
+        "microrregiao": "Lençóis Maranhenses",
+        "codMesorregiao": 2101,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21005,
+        "microrregiao": "Baixada Maranhense",
+        "codMesorregiao": 2101,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21006,
+        "microrregiao": "Itapecuru Mirim",
+        "codMesorregiao": 2101,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21007,
+        "microrregiao": "Gurupi",
+        "codMesorregiao": 2102,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21008,
+        "microrregiao": "Pindaré",
+        "codMesorregiao": 2102,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21009,
+        "microrregiao": "Imperatriz",
+        "codMesorregiao": 2102,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21010,
+        "microrregiao": "Médio Mearim",
+        "codMesorregiao": 2103,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21011,
+        "microrregiao": "Alto Mearim e Grajaú",
+        "codMesorregiao": 2103,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21012,
+        "microrregiao": "Presidente Dutra",
+        "codMesorregiao": 2103,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21013,
+        "microrregiao": "Baixo Parnaíba Maranhense",
+        "codMesorregiao": 2104,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21014,
+        "microrregiao": "Chapadinha",
+        "codMesorregiao": 2104,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21015,
+        "microrregiao": "Codó",
+        "codMesorregiao": 2104,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21016,
+        "microrregiao": "Coelho Neto",
+        "codMesorregiao": 2104,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21017,
+        "microrregiao": "Caxias",
+        "codMesorregiao": 2104,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21018,
+        "microrregiao": "Chapadas do Alto Itapecuru",
+        "codMesorregiao": 2104,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21019,
+        "microrregiao": "Porto Franco",
+        "codMesorregiao": 2105,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21020,
+        "microrregiao": "Gerais de Balsas",
+        "codMesorregiao": 2105,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 21021,
+        "microrregiao": "Chapadas das Mangabeiras",
+        "codMesorregiao": 2105,
+        "codUF": 21,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22001,
+        "microrregiao": "Baixo Parnaíba Piauiense",
+        "codMesorregiao": 2201,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22002,
+        "microrregiao": "Litoral Piauiense",
+        "codMesorregiao": 2201,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22003,
+        "microrregiao": "Teresina",
+        "codMesorregiao": 2202,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22004,
+        "microrregiao": "Campo Maior",
+        "codMesorregiao": 2202,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22005,
+        "microrregiao": "Médio Parnaíba Piauiense",
+        "codMesorregiao": 2202,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22006,
+        "microrregiao": "Valença do Piauí",
+        "codMesorregiao": 2202,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22007,
+        "microrregiao": "Alto Parnaíba Piauiense",
+        "codMesorregiao": 2203,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22008,
+        "microrregiao": "Bertolínia",
+        "codMesorregiao": 2203,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22009,
+        "microrregiao": "Floriano",
+        "codMesorregiao": 2203,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22010,
+        "microrregiao": "Alto Médio Gurguéia",
+        "codMesorregiao": 2203,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22011,
+        "microrregiao": "São Raimundo Nonato",
+        "codMesorregiao": 2203,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22012,
+        "microrregiao": "Chapadas do Extremo Sul Piauiense",
+        "codMesorregiao": 2203,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22013,
+        "microrregiao": "Picos",
+        "codMesorregiao": 2204,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22014,
+        "microrregiao": "Pio IX",
+        "codMesorregiao": 2204,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 22015,
+        "microrregiao": "Alto Médio Canindé",
+        "codMesorregiao": 2204,
+        "codUF": 22,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23001,
+        "microrregiao": "Litoral de Camocim e Acaraú",
+        "codMesorregiao": 2301,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23002,
+        "microrregiao": "Ibiapaba",
+        "codMesorregiao": 2301,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23003,
+        "microrregiao": "Coreaú",
+        "codMesorregiao": 2301,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23004,
+        "microrregiao": "Meruoca",
+        "codMesorregiao": 2301,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23005,
+        "microrregiao": "Sobral",
+        "codMesorregiao": 2301,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23006,
+        "microrregiao": "Ipu",
+        "codMesorregiao": 2301,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23007,
+        "microrregiao": "Santa Quitéria",
+        "codMesorregiao": 2301,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23008,
+        "microrregiao": "Itapipoca",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23009,
+        "microrregiao": "Baixo Curu",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23010,
+        "microrregiao": "Uruburetama",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23011,
+        "microrregiao": "Médio Curu",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23012,
+        "microrregiao": "Canindé",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23013,
+        "microrregiao": "Baturité",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23014,
+        "microrregiao": "Chorozinho",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23015,
+        "microrregiao": "Cascavel",
+        "codMesorregiao": 2302,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23016,
+        "microrregiao": "Fortaleza",
+        "codMesorregiao": 2303,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23017,
+        "microrregiao": "Pacajus",
+        "codMesorregiao": 2303,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23018,
+        "microrregiao": "Sertão de Cratéus",
+        "codMesorregiao": 2304,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23019,
+        "microrregiao": "Sertão de Quixeramobim",
+        "codMesorregiao": 2304,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23020,
+        "microrregiao": "Sertão de Inhamuns",
+        "codMesorregiao": 2304,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23021,
+        "microrregiao": "Sertão de Senador Pompeu",
+        "codMesorregiao": 2304,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23022,
+        "microrregiao": "Litoral de Aracati",
+        "codMesorregiao": 2305,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23023,
+        "microrregiao": "Baixo Jaguaribe",
+        "codMesorregiao": 2305,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23024,
+        "microrregiao": "Médio Jaguaribe",
+        "codMesorregiao": 2305,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23025,
+        "microrregiao": "Serra do Pereiro",
+        "codMesorregiao": 2305,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23026,
+        "microrregiao": "Iguatu",
+        "codMesorregiao": 2306,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23027,
+        "microrregiao": "Várzea Alegre",
+        "codMesorregiao": 2306,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23028,
+        "microrregiao": "Lavras da Mangabeira",
+        "codMesorregiao": 2306,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23029,
+        "microrregiao": "Chapada do Araripe",
+        "codMesorregiao": 2307,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23030,
+        "microrregiao": "Caririaçu",
+        "codMesorregiao": 2307,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23031,
+        "microrregiao": "Barro",
+        "codMesorregiao": 2307,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23032,
+        "microrregiao": "Cariri",
+        "codMesorregiao": 2307,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 23033,
+        "microrregiao": "Brejo Santo",
+        "codMesorregiao": 2307,
+        "codUF": 23,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24001,
+        "microrregiao": "Mossoró",
+        "codMesorregiao": 2401,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24002,
+        "microrregiao": "Chapada do Apodi",
+        "codMesorregiao": 2401,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24003,
+        "microrregiao": "Médio Oeste",
+        "codMesorregiao": 2401,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24004,
+        "microrregiao": "Vale do Açu",
+        "codMesorregiao": 2401,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24005,
+        "microrregiao": "Serra de São Miguel",
+        "codMesorregiao": 2401,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24006,
+        "microrregiao": "Pau dos Ferros",
+        "codMesorregiao": 2401,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24007,
+        "microrregiao": "Umarizal",
+        "codMesorregiao": 2401,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24008,
+        "microrregiao": "Macau",
+        "codMesorregiao": 2402,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24009,
+        "microrregiao": "Angicos",
+        "codMesorregiao": 2402,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24010,
+        "microrregiao": "Serra de Santana",
+        "codMesorregiao": 2402,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24011,
+        "microrregiao": "Seridó Ocidental",
+        "codMesorregiao": 2402,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24012,
+        "microrregiao": "Seridó Oriental",
+        "codMesorregiao": 2402,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24013,
+        "microrregiao": "Baixa Verde",
+        "codMesorregiao": 2403,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24014,
+        "microrregiao": "Borborema Potiguar",
+        "codMesorregiao": 2403,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24015,
+        "microrregiao": "Agreste Potiguar",
+        "codMesorregiao": 2403,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24016,
+        "microrregiao": "Litoral Nordeste",
+        "codMesorregiao": 2404,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24017,
+        "microrregiao": "Macaíba",
+        "codMesorregiao": 2404,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24018,
+        "microrregiao": "Natal",
+        "codMesorregiao": 2404,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 24019,
+        "microrregiao": "Litoral Sul",
+        "codMesorregiao": 2404,
+        "codUF": 24,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25001,
+        "microrregiao": "Catolé do Rocha",
+        "codMesorregiao": 2501,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25002,
+        "microrregiao": "Cajazeiras",
+        "codMesorregiao": 2501,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25003,
+        "microrregiao": "Sousa",
+        "codMesorregiao": 2501,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25004,
+        "microrregiao": "Patos",
+        "codMesorregiao": 2501,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25005,
+        "microrregiao": "Piancó",
+        "codMesorregiao": 2501,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25006,
+        "microrregiao": "Itaporanga",
+        "codMesorregiao": 2501,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25007,
+        "microrregiao": "Serra do Teixeira",
+        "codMesorregiao": 2501,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25008,
+        "microrregiao": "Seridó Ocidental Paraibano",
+        "codMesorregiao": 2502,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25009,
+        "microrregiao": "Seridó Oriental Paraibano",
+        "codMesorregiao": 2502,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25010,
+        "microrregiao": "Cariri Ocidental",
+        "codMesorregiao": 2502,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25011,
+        "microrregiao": "Cariri Oriental",
+        "codMesorregiao": 2502,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25012,
+        "microrregiao": "Curimataú Ocidental",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25013,
+        "microrregiao": "Curimataú Oriental",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25014,
+        "microrregiao": "Esperança",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25015,
+        "microrregiao": "Brejo Paraibano",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25016,
+        "microrregiao": "Guarabira",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25017,
+        "microrregiao": "Campina Grande",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25018,
+        "microrregiao": "Itabaiana",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25019,
+        "microrregiao": "Umbuzeiro",
+        "codMesorregiao": 2503,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25020,
+        "microrregiao": "Litoral Norte",
+        "codMesorregiao": 2504,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25021,
+        "microrregiao": "Sapé",
+        "codMesorregiao": 2504,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25022,
+        "microrregiao": "João Pessoa",
+        "codMesorregiao": 2504,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 25023,
+        "microrregiao": "Litoral Sul",
+        "codMesorregiao": 2504,
+        "codUF": 25,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26001,
+        "microrregiao": "Araripina",
+        "codMesorregiao": 2601,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26002,
+        "microrregiao": "Salgueiro",
+        "codMesorregiao": 2601,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26003,
+        "microrregiao": "Pajeú",
+        "codMesorregiao": 2601,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26004,
+        "microrregiao": "Sertão do Moxotó",
+        "codMesorregiao": 2601,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26005,
+        "microrregiao": "Petrolina",
+        "codMesorregiao": 2602,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26006,
+        "microrregiao": "Itaparica",
+        "codMesorregiao": 2602,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26007,
+        "microrregiao": "Vale do Ipanema",
+        "codMesorregiao": 2603,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26008,
+        "microrregiao": "Vale do Ipojuca",
+        "codMesorregiao": 2603,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26009,
+        "microrregiao": "Alto Capibaribe",
+        "codMesorregiao": 2603,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26010,
+        "microrregiao": "Médio Capibaribe",
+        "codMesorregiao": 2603,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26011,
+        "microrregiao": "Garanhuns",
+        "codMesorregiao": 2603,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26012,
+        "microrregiao": "Brejo Pernambucano",
+        "codMesorregiao": 2603,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26013,
+        "microrregiao": "Mata Setentrional Pernambucana",
+        "codMesorregiao": 2604,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26014,
+        "microrregiao": "Vitória de Santo Antão",
+        "codMesorregiao": 2604,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26015,
+        "microrregiao": "Mata Meridional Pernambucana",
+        "codMesorregiao": 2604,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26016,
+        "microrregiao": "Itamaracá",
+        "codMesorregiao": 2605,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26017,
+        "microrregiao": "Recife",
+        "codMesorregiao": 2605,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26018,
+        "microrregiao": "Suape",
+        "codMesorregiao": 2605,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 26019,
+        "microrregiao": "Fernando de Noronha",
+        "codMesorregiao": 2605,
+        "codUF": 26,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27001,
+        "microrregiao": "Serrana do Sertão Alagoano",
+        "codMesorregiao": 2701,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27002,
+        "microrregiao": "Alagoana do Sertão do São Francisco",
+        "codMesorregiao": 2701,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27003,
+        "microrregiao": "Santana do Ipanema",
+        "codMesorregiao": 2701,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27004,
+        "microrregiao": "Batalha",
+        "codMesorregiao": 2701,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27005,
+        "microrregiao": "Palmeira dos Índios",
+        "codMesorregiao": 2702,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27006,
+        "microrregiao": "Arapiraca",
+        "codMesorregiao": 2702,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27007,
+        "microrregiao": "Traipu",
+        "codMesorregiao": 2702,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27008,
+        "microrregiao": "Serrana dos Quilombos",
+        "codMesorregiao": 2703,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27009,
+        "microrregiao": "Mata Alagoana",
+        "codMesorregiao": 2703,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27010,
+        "microrregiao": "Litoral Norte Alagoano",
+        "codMesorregiao": 2703,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27011,
+        "microrregiao": "Maceió",
+        "codMesorregiao": 2703,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27012,
+        "microrregiao": "São Miguel dos Campos",
+        "codMesorregiao": 2703,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 27013,
+        "microrregiao": "Penedo",
+        "codMesorregiao": 2703,
+        "codUF": 27,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28001,
+        "microrregiao": "Sergipana do Sertão do São Francisco",
+        "codMesorregiao": 2801,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28002,
+        "microrregiao": "Carira",
+        "codMesorregiao": 2801,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28003,
+        "microrregiao": "Nossa Senhora das Dores",
+        "codMesorregiao": 2802,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28004,
+        "microrregiao": "Agreste de Itabaiana",
+        "codMesorregiao": 2802,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28005,
+        "microrregiao": "Tobias Barreto",
+        "codMesorregiao": 2802,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28006,
+        "microrregiao": "Agreste de Lagarto",
+        "codMesorregiao": 2802,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28007,
+        "microrregiao": "Propriá",
+        "codMesorregiao": 2803,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28008,
+        "microrregiao": "Cotinguiba",
+        "codMesorregiao": 2803,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28009,
+        "microrregiao": "Japaratuba",
+        "codMesorregiao": 2803,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28010,
+        "microrregiao": "Baixo Cotinguiba",
+        "codMesorregiao": 2803,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28011,
+        "microrregiao": "Aracaju",
+        "codMesorregiao": 2803,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28012,
+        "microrregiao": "Boquim",
+        "codMesorregiao": 2803,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 28013,
+        "microrregiao": "Estância",
+        "codMesorregiao": 2803,
+        "codUF": 28,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29001,
+        "microrregiao": "Barreiras",
+        "codMesorregiao": 2901,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29002,
+        "microrregiao": "Cotegipe",
+        "codMesorregiao": 2901,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29003,
+        "microrregiao": "Santa Maria da Vitória",
+        "codMesorregiao": 2901,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29004,
+        "microrregiao": "Juazeiro",
+        "codMesorregiao": 2902,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29005,
+        "microrregiao": "Paulo Afonso",
+        "codMesorregiao": 2902,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29006,
+        "microrregiao": "Barra",
+        "codMesorregiao": 2902,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29007,
+        "microrregiao": "Bom Jesus da Lapa",
+        "codMesorregiao": 2902,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29008,
+        "microrregiao": "Senhor do Bonfim",
+        "codMesorregiao": 2903,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29009,
+        "microrregiao": "Irecê",
+        "codMesorregiao": 2903,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29010,
+        "microrregiao": "Jacobina",
+        "codMesorregiao": 2903,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29011,
+        "microrregiao": "Itaberaba",
+        "codMesorregiao": 2903,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29012,
+        "microrregiao": "Feira de Santana",
+        "codMesorregiao": 2903,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29013,
+        "microrregiao": "Jeremoabo",
+        "codMesorregiao": 2904,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29014,
+        "microrregiao": "Euclides da Cunha",
+        "codMesorregiao": 2904,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29015,
+        "microrregiao": "Ribeira do Pombal",
+        "codMesorregiao": 2904,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29016,
+        "microrregiao": "Serrinha",
+        "codMesorregiao": 2904,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29017,
+        "microrregiao": "Alagoinhas",
+        "codMesorregiao": 2904,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29018,
+        "microrregiao": "Entre Rios",
+        "codMesorregiao": 2904,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29019,
+        "microrregiao": "Catu",
+        "codMesorregiao": 2905,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29020,
+        "microrregiao": "Santo Antônio de Jesus",
+        "codMesorregiao": 2905,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29021,
+        "microrregiao": "Salvador",
+        "codMesorregiao": 2905,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29022,
+        "microrregiao": "Boquira",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29023,
+        "microrregiao": "Seabra",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29024,
+        "microrregiao": "Jequié",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29025,
+        "microrregiao": "Livramento do Brumado",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29026,
+        "microrregiao": "Guanambi",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29027,
+        "microrregiao": "Brumado",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29028,
+        "microrregiao": "Vitória da Conquista",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29029,
+        "microrregiao": "Itapetinga",
+        "codMesorregiao": 2906,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29030,
+        "microrregiao": "Valença",
+        "codMesorregiao": 2907,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29031,
+        "microrregiao": "Ilhéus-Itabuna",
+        "codMesorregiao": 2907,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    },
+    {
+        "codMicrorregiao": 29032,
+        "microrregiao": "Porto Seguro",
+        "codMesorregiao": 2907,
+        "codUF": 29,
+        "regiao": "Nordeste"
+    }
+]
