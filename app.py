@@ -1,27 +1,16 @@
 from os import read
 from flask import Flask, jsonify, request, g
-import json
-import os
-from Models.InstituicaoEnsino import InstituicaoEnsino, InstituicaoEnsinoSchemas, UFSchema, MesorregiaoSchema, MicrorregiaoSchema, MunicipioSchema
 import _sqlite3
 from marshmallow import ValidationError
 
-DATABASE = 'censoescolar.db'
+from helpers.application import app
+from helpers.database import getConnection
+from helpers.logging import logger
+from helpers.CORS import cors
 
-app = Flask(__name__)
+from Models.InstituicaoEnsino import InstituicaoEnsino, InstituicaoEnsinoSchemas, UFSchema, MesorregiaoSchema, MicrorregiaoSchema, MunicipioSchema
 
-def getConnection():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = _sqlite3.connect(DATABASE)
-    return db
-
-
-@app.teardown_appcontext
-def closeConnection(exception):
-    db = getattr(g, '_database', None)
-    if db is not None:
-        db.close()
+cors.init_app(app)
 
 
 @app.route("/")
@@ -31,7 +20,7 @@ def index():
 
 @app.get("/instituicoes")
 def instituicoesResource():
-    print("GET - Instituições com paginação")
+    logger.info("GET - Instituições com paginação")
 
     page = int(request.args.get('page', 1))
     per_page = int(request.args.get('per_page', 10))
@@ -51,12 +40,12 @@ def instituicoesResource():
             instituicaoEnsino = InstituicaoEnsino(
                 row[0], row[1], row[2], row[3],
                 row[4], row[5], row[6], row[7],
-                row[8], row[9], row[10], row[11],
-                row[12]
+                row[8]
             )
             instituicoesEnsino.append(instituicaoEnsino.toDict())
 
     except _sqlite3.Error:
+        logger.error("Problema com banco")
         return jsonify({"mensagem": "Problema com o banco de dados."}), 500
  
 
@@ -66,9 +55,10 @@ def instituicoesResource():
 
 @app.get("/instituicoes/<int:id>")
 def instituicoesByIdResource(id):
+    logger.info("Get - Instituições")
     try:
         cursor = getConnection().cursor()
-        cursor.execute('SELECT regiao, codRegiao, UF, codUF, municipio, codMunicipio, mesorregiao, codMesorregiao, microrregiao, codMicrorregiao, entidade, codEntidade, matriculas_base FROM tb_instituicao WHERE codEntidade = ?', (id,))
+        cursor.execute('SELECT regiao, codRegiao, UF, codUF, municipio, codMunicipio, entidade, codEntidade, matriculas_base FROM tb_instituicao WHERE codEntidade = ?', (id,))
         row = cursor.fetchone()
 
         if row is None:
@@ -83,11 +73,11 @@ def instituicoesByIdResource(id):
 
 @app.post("/instituicoes")
 def instituicaoInsercaoResource():
+    logger.info("POST - Instituições")
     content = request.get_json()
 
     required_fields = [
         'regiao', 'codRegiao', 'UF', 'codUF', 'municipio', 'codMunicipio',
-        'mesorregiao', 'codMesorregiao', 'microrregiao', 'codMicrorregiao',
         'entidade', 'matriculas_base'
     ]
 
@@ -100,13 +90,11 @@ def instituicaoInsercaoResource():
         cursor.execute("""
             INSERT INTO tb_instituicao (
                 regiao, codRegiao, UF, codUF, municipio, codMunicipio,
-                mesorregiao, codMesorregiao, microrregiao, codMicrorregiao,
                 entidade, matriculas_base
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             content['regiao'], content['codRegiao'], content['UF'], content['codUF'],
-            content['municipio'], content['codMunicipio'], content['mesorregiao'],
-            content['codMesorregiao'], content['microrregiao'], content['codMicrorregiao'],
+            content['municipio'], content['codMunicipio'],
             content['entidade'], content['matriculas_base']
         ))
 
@@ -115,29 +103,31 @@ def instituicaoInsercaoResource():
 
         nova_instituicao = InstituicaoEnsino(
             content['regiao'], content['codRegiao'], content['UF'], content['codUF'],
-            content['municipio'], content['codMunicipio'], content['mesorregiao'],
-            content['codMesorregiao'], content['microrregiao'], content['codMicrorregiao'],
+            content['municipio'], content['codMunicipio'],
             content['entidade'], codEntidade, content['matriculas_base']
         )
 
         return jsonify(nova_instituicao.toDict()), 201
 
     except _sqlite3.Error as e:
-        return jsonify({"mensagem": f"Erro ao inserir: {str(e)}"}), 500
+         logger.error("Erro ao inserir")
+         return jsonify({"mensagem": f"Erro ao inserir: {str(e)}"}), 500
+    
    
 
 
 @app.put("/instituicoes/<int:id>")
 def instituicaoAtualizacaoResource(id):
+    logger.info("PUT - Instituições")
     content = request.get_json()
 
     required_fields = [
         'regiao', 'codRegiao', 'UF', 'codUF', 'municipio',
-        'codMunicipio', 'mesorregiao', 'codMesorregiao', 'microrregiao',
-        'codMicrorregiao', 'entidade', 'matriculas_base'
+        'codMunicipio', 'entidade', 'matriculas_base'
     ]
 
     if not all(field in content for field in required_fields):
+        logger.error("Campos ausentes")
         return jsonify({"mensagem": "Campos ausentes"}), 400
 
     try:
@@ -147,16 +137,15 @@ def instituicaoAtualizacaoResource(id):
         cursor.execute("""
             UPDATE tb_instituicao SET
                 regiao = ?, codRegiao = ?, UF = ?, codUF = ?, municipio = ?,
-                codMunicipio = ?, mesorregiao = ?, codMesorregiao = ?, microrregiao = ?,
-                codMicrorregiao = ?, entidade = ?, matriculas_base = ?
+                codMunicipio = ?, entidade = ?, matriculas_base = ?
             WHERE codEntidade = ?
         """, (
             content['regiao'], content['codRegiao'], content['UF'], content['codUF'],
-            content['municipio'], content['codMunicipio'], content['mesorregiao'], content['codMesorregiao'],
-            content['microrregiao'], content['codMicrorregiao'], content['entidade'], content['matriculas_base'], id
+            content['municipio'], content['codMunicipio'], content['entidade'], content['matriculas_base'], id
         ))
 
         if cursor.rowcount == 0:
+            logger.error("Instituição não encotrada")
             return jsonify({"mensagem": "Instituição não encontrada"}), 404
 
         conn.commit()
@@ -164,11 +153,13 @@ def instituicaoAtualizacaoResource(id):
         return jsonify(content), 200
 
     except _sqlite3.Error:
+        logger.error("Erro ao atualizar")
         return jsonify({"mensagem": "Erro ao atualizar."}), 500
     
 
 @app.delete("/instituicoes/<int:id>")
 def instituicaoRemocaoResource(id):
+    logger.info("DELETE - Instituições")
     try:
         conn = getConnection()
         cursor = conn.cursor()
@@ -176,29 +167,27 @@ def instituicaoRemocaoResource(id):
         cursor.execute("DELETE FROM tb_instituicao WHERE codEntidade = ?", (id,))
 
         if cursor.rowcount == 0:
+            logger.error("Instituição não encontrada")
             return jsonify({"mensagem": "Instituição não encontrada"}), 404
 
         conn.commit()
         return jsonify({"mensagem": "Instituição removida com sucesso"}), 200
 
     except _sqlite3.Error:
+        logger.error("Erro ao remover a instituição")
         return jsonify({"mensagem": "Erro ao remover instituição."}), 500
    
 
-from flask import Flask, request, jsonify
-import sqlite3
-
-app = Flask(__name__)
 DB_FILE = "censoescolar.db"
 
-@app.route('/instituicoes', methods=['GET'])
+@app.route('/instituicoess', methods=['GET'])
 def get_instituicoes():
    
     page = int(request.args.get('page', 1))
     per_page = int(request.args.get('per_page', 10))
     offset = (page - 1) * per_page
 
-    with sqlite3.connect(DB_FILE) as conn:
+    with _sqlite3.connect(DB_FILE) as conn:
         cursor = conn.cursor()
         cursor.execute("""
             SELECT

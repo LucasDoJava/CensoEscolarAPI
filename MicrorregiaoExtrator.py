@@ -1,5 +1,6 @@
 import requests
 import json
+from helpers.logging import logger
 
 
 url = "https://servicodados.ibge.gov.br/api/v1/localidades/microrregioes"
@@ -26,5 +27,7 @@ for item in data:
 
 with open("microrregioes_nordeste.json", "w", encoding="utf-8") as f:
     json.dump(microrregioes_nordeste, f, ensure_ascii=False, indent=4)
+
+    logger.info("Microrregião Add")
 
 print("microrregioes_nordeste.json salvo com sucesso!")

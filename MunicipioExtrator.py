@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 import json
+from helpers.logging import logger
 
 
 url = "https://servicodados.ibge.gov.br/api/v1/localidades/municipios"
@@ -41,3 +42,5 @@ json_nordeste = df_nordeste.to_json(orient="records", force_ascii=False, indent=
 
 with open("municipios_nordeste.json", "w", encoding="utf-8") as f:
     f.write(json_nordeste)
+
+logger.info("Município Add")

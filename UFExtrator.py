@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 import json
-
+from helpers.logging import logger
 
 url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
 
@@ -24,3 +24,5 @@ json_nordeste = df_nordeste.to_json(orient="records", force_ascii=False, indent=
 
 with open("estados_nordeste.json", "w", encoding="utf-8") as f:
      f.write(json_nordeste)
+
+     logger.info("UF Add")

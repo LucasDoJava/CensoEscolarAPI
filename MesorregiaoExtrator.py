@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from helpers.logging import logger
 
 
 url = "https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes"
@@ -29,4 +30,5 @@ json_nordeste = df_formatado.to_json(orient="records", force_ascii=False, indent
 with open("mesorregioes_nordeste.json", "w", encoding="utf-8") as f:
     f.write(json_nordeste)
 
+logger.info("Mesorregião Add")
 print("Arquivo 'mesorregioes_nordeste.json' salvo com sucesso.")
