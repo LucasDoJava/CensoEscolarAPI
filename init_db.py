@@ -13,7 +13,6 @@ with sqlite3.connect(DB_FILE) as connection:
     with open(SCHEMA_FILE, "r", encoding="utf-8") as schema_file:
         connection.executescript(schema_file.read())
 
-
 with sqlite3.connect(DB_FILE) as connection:
     cursor = connection.cursor()
 
@@ -25,6 +24,7 @@ with sqlite3.connect(DB_FILE) as connection:
                 value = row[field].strip()
                 return int(float(value)) if value else 0
 
+            codEntidade = parse_int('codEntidade')
             entidade = row['entidade'].strip()
             codRegiao = parse_int('codRegiao')
             regiao = row['regiao'].strip()
@@ -32,24 +32,16 @@ with sqlite3.connect(DB_FILE) as connection:
             UF = row['UF'].strip()
             codMunicipio = parse_int('codMunicipio')
             municipio = row['municipio'].strip()
-            codMesorregiao = parse_int('codMesorregiao')
-            mesorregiao = row['mesorregiao'].strip()
-            codMicrorregiao = parse_int('codMicrorregiao')
-            microrregiao = row['microrregiao'].strip()
             matriculas_base = parse_int('matrículas base')
 
             cursor.execute("""
                 INSERT INTO tb_instituicao (
-                    entidade, codRegiao, regiao, codUF, UF,
-                    codMunicipio, municipio, codMesorregiao,
-                    mesorregiao, codMicrorregiao, microrregiao,
-                    matriculas_base
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                     codEntidade, entidade, codRegiao, regiao, codUF, UF,
+                    codMunicipio, municipio, matriculas_base
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
-                entidade, codRegiao, regiao, codUF, UF,
-                codMunicipio, municipio, codMesorregiao,
-                mesorregiao, codMicrorregiao, microrregiao,
-                matriculas_base
+                 codEntidade, entidade, codRegiao, regiao, codUF, UF,
+                codMunicipio, municipio, matriculas_base
             ))
 
     connection.commit()

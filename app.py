@@ -185,3 +185,46 @@ def instituicaoRemocaoResource(id):
         return jsonify({"mensagem": "Erro ao remover instituição."}), 500
    
 
+from flask import Flask, request, jsonify
+import sqlite3
+
+app = Flask(__name__)
+DB_FILE = "censoescolar.db"
+
+@app.route('/instituicoes', methods=['GET'])
+def get_instituicoes():
+   
+    page = int(request.args.get('page', 1))
+    per_page = int(request.args.get('per_page', 10))
+    offset = (page - 1) * per_page
+
+    with sqlite3.connect(DB_FILE) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT
+                i.codEntidade,
+                i.entidade,
+                i.codMunicipio,
+                m.nomeMunicipio,
+                i.codUF,
+                uf.nomeEstado,
+                mi.codMicrorregiao,
+                mi.microrregiao,
+                me.codMesorregiao,
+                me.mesorregiao,
+                i.matriculas_base
+            FROM tb_instituicao i
+            JOIN tb_Municipio m ON i.codMunicipio = m.idMunicipio
+            JOIN tb_Microrregiao mi ON m.codMicrorregiao = mi.codMicrorregiao
+            JOIN tb_Mesorregiao me ON m.codMesorregiao = me.codMesorregiao
+            JOIN tb_UF uf ON i.codUF = uf.codUF
+            LIMIT ? OFFSET ?;
+        """, (per_page, offset))
+
+        colunas = [desc[0] for desc in cursor.description]
+        resultados = [dict(zip(colunas, linha)) for linha in cursor.fetchall()]
+
+    return jsonify(resultados)
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -7,14 +7,11 @@ CREATE TABLE tb_instituicao (
     codUF INTEGER,
     municipio TEXT,
     codMunicipio INTEGER,
-    mesorregiao TEXT,
-    codMesorregiao INTEGER,
-    microrregiao TEXT,
-    codMicrorregiao INTEGER,
     entidade TEXT,
     codEntidade INTEGER PRIMARY KEY AUTOINCREMENT,
     matriculas_base INTEGER,
-    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    Foreign KEY (codMunicipio) References tb_Municipio
 );
 
 CREATE TABLE IF NOT EXISTS tb_UF (
