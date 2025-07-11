@@ -1,10 +1,10 @@
 from flask import Flask, jsonify, request
 import psycopg2
-from psycopg2.extras import RealDictCursor  # para retornar dicts diretamente
+from psycopg2.extras import RealDictCursor 
 from marshmallow import ValidationError
 
 from helpers.application import app, api
-from helpers.database import getConnection  # você pode adaptar aqui também se quiser centralizar a conexão
+from helpers.database import getConnection  
 from helpers.logging import logger
 from helpers.CORS import cors
 
@@ -13,7 +13,7 @@ from resources.indexResource import IndexResource
 
 from Models.InstituicaoEnsino import InstituicaoEnsino, InstituicaoEnsinoSchemas, UFSchema, MesorregiaoSchema, MicrorregiaoSchema, MunicipioSchema
 
-# Inicializa CORS
+
 cors.init_app(app)
 
 # Define as rotas da API
