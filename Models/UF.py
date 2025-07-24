@@ -1,22 +1,40 @@
-from sqlalchemy import String
+from __future__ import annotations
+from sqlalchemy import Integer, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from typing import List
+from typing import List, TYPE_CHECKING
 from helpers.database import db
-from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from .Municipio import Municipio 
-    from .Mesorregiao import Mesorregiao
-    from .Microrregiao import Microrregiao
+    from .Mesorregiao import tb_Mesorregiao
+    from .Microrregiao import tb_Microrregiao
+    from .Municipio import tb_Municipio
 
-class UF(db.Model):
+class tb_UF(db.Model):
     __tablename__ = "tb_UF"
 
-    codUF: Mapped[int] = mapped_column(primary_key=True)
-    UF: Mapped[str] = mapped_column(String)
-    nomeEstado: Mapped[str] = mapped_column(String)
-    regiao: Mapped[str] = mapped_column(String)
+    coduf: Mapped[int] = mapped_column('coduf', Integer, primary_key=True)
+    uf: Mapped[str] = mapped_column('uf', String)
+    nome_estado: Mapped[str] = mapped_column('nome_estado', String)
+    regiao: Mapped[str] = mapped_column('regiao', String)
 
-    mesorregioes: Mapped[List["Mesorregiao"]] = relationship("Mesorregiao", back_populates="uf")
-    microrregioes: Mapped[List["Microrregiao"]] = relationship("Microrregiao", back_populates="uf")
-    municipios: Mapped[List["Municipio"]] = relationship("Municipio", back_populates="uf")
+    # Relacionamentos corrigidos (nomes consistentes)
+    mesorregioes: Mapped[List[tb_Mesorregiao]] = relationship(
+        "tb_Mesorregiao", 
+        back_populates="uf",
+        cascade="all, delete-orphan"
+    )
+    
+    microrregioes: Mapped[List[tb_Microrregiao]] = relationship(
+        "tb_Microrregiao",
+        back_populates="uf",
+        cascade="all, delete-orphan"
+    )
+    
+    municipios: Mapped[List[tb_Municipio]] = relationship(
+        "tb_Municipio",
+        back_populates="uf",
+        cascade="all, delete-orphan"
+    )
+
+    def __repr__(self):
+        return f"tb_UF(cod={self.coduf}, nome={self.nome_estado})"

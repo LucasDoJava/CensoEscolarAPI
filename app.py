@@ -11,8 +11,9 @@ from helpers.CORS import cors
 from Models import UF, Mesorregiao, Microrregiao, Municipio, Instituicao
 
 
-from resources.InstituicaoResource import InstituicoesResource, InstituicaoResource
+#from resources.InstituicaoResource import InstituicoesResource, InstituicaoResource
 from resources.indexResource import IndexResource
+from resources.InstituicoesResource import InstituicoesResource, InstituicaoResource
 
 from Models.InstituicaoEnsino import InstituicaoEnsino, InstituicaoEnsinoSchemas, UFSchema, MesorregiaoSchema, MicrorregiaoSchema, MunicipioSchema
 
