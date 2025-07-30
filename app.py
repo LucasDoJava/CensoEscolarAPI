@@ -23,7 +23,7 @@ cors.init_app(app)
 # Define as rotas da API
 api.add_resource(IndexResource, '/')
 api.add_resource(InstituicoesResource, '/instituicoes')
-api.add_resource(InstituicaoResource, '/instituicoes/<int:id>')
+api.add_resource(InstituicaoResource, '/instituicoes/<int:codentidade>/<int:ano>')
 
 # Configuração da conexão com PostgreSQL
 DB_CONFIG = {

@@ -12,7 +12,7 @@ if TYPE_CHECKING:
     from .Instituicao import tb_instituicao
 
 tb_Municipio_fields = {
-    "id_municipio": flaskFields.Integer,
+    "idmunicipio": flaskFields.Integer,
     "nome_municipio": flaskFields.String,
     "coduf": flaskFields.Integer,
     "regiao": flaskFields.String,
@@ -23,8 +23,8 @@ tb_Municipio_fields = {
 class tb_Municipio(db.Model):
     __tablename__ = "tb_Municipio"
 
-    id_municipio: Mapped[int] = mapped_column('id_municipio', Integer, primary_key=True)
-    nome_municipio: Mapped[str] = mapped_column('nome_municipio', String)
+    idmunicipio: Mapped[int] = mapped_column('idmunicipio', Integer, primary_key=True)
+    nome_municipio: Mapped[str] = mapped_column('nomemunicipio', String)
     coduf: Mapped[int] = mapped_column('coduf', ForeignKey('tb_UF.coduf'))
     regiao: Mapped[str] = mapped_column('regiao', String)
     codmesorregiao: Mapped[int] = mapped_column('codmesorregiao', ForeignKey('tb_Mesorregiao.codmesorregiao'))
@@ -35,13 +35,14 @@ class tb_Municipio(db.Model):
     mesorregiao: Mapped[tb_Mesorregiao] = relationship("tb_Mesorregiao", back_populates="municipios")
     microrregiao: Mapped[tb_Microrregiao] = relationship("tb_Microrregiao", back_populates="municipios")
     instituicoes: Mapped[List[tb_instituicao]] = relationship(
-        "tb_instituicao", 
-        back_populates="municipio_rel"
+    "tb_instituicao", 
+    back_populates="municipio_rel",
+    primaryjoin="tb_Municipio.idmunicipio == tb_instituicao.codmunicipio"
     )
 
-    def __init__(self, id_municipio: int, nome_municipio: str, coduf: int, 
+    def __init__(self, idmunicipio: int, nome_municipio: str, coduf: int, 
                  regiao: str, codmesorregiao: int, codmicrorregiao: int):
-        self.id_municipio = id_municipio
+        self.idmunicipio = idmunicipio
         self.nome_municipio = nome_municipio
         self.coduf = coduf
         self.regiao = regiao
@@ -49,4 +50,4 @@ class tb_Municipio(db.Model):
         self.codmicrorregiao = codmicrorregiao
 
     def __repr__(self):
-        return f"tb_Municipio(id={self.id_municipio}, nome={self.nome_municipio})"
+        return f"tb_Municipio(id={self.idmunicipio}, nome={self.nome_municipio})"

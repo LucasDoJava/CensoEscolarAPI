@@ -31,7 +31,7 @@ class tb_instituicao(db.Model):
     uf: Mapped[str] = mapped_column('uf', String)
     coduf: Mapped[int] = mapped_column('coduf', Integer)
     municipio: Mapped[str] = mapped_column(String)
-    codmunicipio: Mapped[int] = mapped_column('codmunicipio', ForeignKey('tb_Municipio.id_municipio'))
+    codmunicipio: Mapped[int] = mapped_column(ForeignKey('tb_Municipio.idmunicipio'))
     entidade: Mapped[str] = mapped_column(String)
     codentidade: Mapped[int] = mapped_column('codentidade', Integer)
     matriculas_base: Mapped[int] = mapped_column(Integer)
@@ -39,20 +39,21 @@ class tb_instituicao(db.Model):
     created: Mapped[datetime] = mapped_column(DateTime, server_default=db.func.now())
 
     municipio_rel: Mapped[tb_Municipio] = relationship(
-        "tb_Municipio", 
-        back_populates="instituicoes"
-    )
+    "tb_Municipio", 
+    back_populates="instituicoes"
+)
+
 
     __mapper_args__ = {
         "primary_key": [codentidade, ano]
     }
 
-    def __init__(self, regiao: str, codregiao: int, UF: str, coduf: int, 
+    def __init__(self, regiao: str, codregiao: int, uf: str, coduf: int, 
                  municipio: str, codmunicipio: int, entidade: str, 
                  codentidade: int, matriculas_base: int, ano: int):
         self.regiao = regiao
         self.codregiao = codregiao
-        self.UF = UF
+        self.uf = uf
         self.coduf = coduf
         self.municipio = municipio
         self.codmunicipio = codmunicipio

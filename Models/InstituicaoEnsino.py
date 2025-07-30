@@ -5,7 +5,7 @@ from flask_restful import fields as flaskFields
 instituicao_fields = {
     'regiao':   flaskFields.String,
     'codRegiao':   flaskFields.Integer,
-    'UF':   flaskFields.String,
+    'uf':   flaskFields.String,
     'codUF':   flaskFields.Integer,
     'municipio':   flaskFields.String,
     'codMunicipio':   flaskFields.Integer,
@@ -16,11 +16,11 @@ instituicao_fields = {
 }
 
 class InstituicaoEnsino:
-    def __init__(self, regiao, codRegiao, UF, codUF, municipio,
+    def __init__(self, regiao, codRegiao, uf, codUF, municipio,
                  codMunicipio, entidade, codEntidade, matriculas_base, ano,  created=None):
         self.regiao = regiao
         self.codRegiao = codRegiao
-        self.UF = UF
+        self.uf = uf
         self.codUF = codUF
         self.municipio = municipio
         self.codMunicipio = codMunicipio
@@ -33,7 +33,7 @@ class InstituicaoEnsino:
 class InstituicaoEnsinoSchemas(Schema):
      regiao = fields.String(required=True, validate=Length(min=2, max=20))
      codRegiao = fields.Integer(required=True, validate=Range(min=1))
-     UF = fields.String(required=True, validate=Length(equal=2))  
+     uf = fields.String(required=True, validate=Length(equal=2))  
      codUF = fields.Integer(required=True, validate=Range(min=2))
      municipio = fields.String(required=True, validate=Length(min=2, max=150))
      codMunicipio = fields.Integer(required=True, validate=Range(min=7))
@@ -43,15 +43,15 @@ class InstituicaoEnsinoSchemas(Schema):
      ano = fields.Integer(required=True, validate=Range(min=0))
 
 class UF:
-    def __init__(self, codUF, UF, nomeUF, regiao):
+    def __init__(self, codUF, uf, nomeUF, regiao):
         self.codUF = codUF
-        self.UF = UF
+        self.uf = uf
         self.nomeUF = nomeUF
         self.regiao = regiao
 
 class UFSchema(Schema):
     codUF = fields.Integer()
-    UF = fields.String(required=True, validate=Length(min=2, max=100))
+    uf = fields.String(required=True, validate=Length(min=2, max=100))
     nomeUF = fields.String(required=True, validate=Length(min=2, max=100))
     regiao = fields.String(required=True, validate=Length(min=2, max=100))
 
