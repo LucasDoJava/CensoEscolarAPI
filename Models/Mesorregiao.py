@@ -3,11 +3,19 @@ from sqlalchemy import Integer, String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from typing import List, TYPE_CHECKING
 from helpers.database import db
+from flask_restful import fields as flaskFields
 
 if TYPE_CHECKING:
     from .UF import tb_UF
     from .Microrregiao import tb_Microrregiao
     from .Municipio import tb_Municipio
+
+tb_Mesorregiao_fields = {
+    "codmesorregiao": flaskFields.Integer,
+    "mesorregiao": flaskFields.String,
+    "coduf": flaskFields.Integer,
+    "regiao": flaskFields.String
+}
 
 class tb_Mesorregiao(db.Model):
     __tablename__ = "tb_Mesorregiao"
@@ -34,3 +42,5 @@ class tb_Mesorregiao(db.Model):
 
     def __repr__(self):
         return f"tb_Mesorregiao(cod={self.codmesorregiao}, nome={self.mesorregiao})"
+    
+    

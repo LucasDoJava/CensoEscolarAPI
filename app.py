@@ -14,6 +14,10 @@ from Models import UF, Mesorregiao, Microrregiao, Municipio, Instituicao
 #from resources.InstituicaoResource import InstituicoesResource, InstituicaoResource
 from resources.indexResource import IndexResource
 from resources.InstituicoesResource import InstituicoesResource, InstituicaoResource
+from resources.MesorregiaoResource import MesorregioesResource, MesorregioaResource
+from resources.MicrorregiaoResource import MicrorregioesResource, MicrorregiaoResource
+from resources.UfResource import UfsResource, UfResource
+from resources.MunicipioResource import MunicipiosResource, MunicipioResource
 
 from Models.InstituicaoEnsino import InstituicaoEnsino, InstituicaoEnsinoSchemas, UFSchema, MesorregiaoSchema, MicrorregiaoSchema, MunicipioSchema
 
@@ -24,6 +28,14 @@ cors.init_app(app)
 api.add_resource(IndexResource, '/')
 api.add_resource(InstituicoesResource, '/instituicoes')
 api.add_resource(InstituicaoResource, '/instituicoes/<int:codentidade>/<int:ano>')
+api.add_resource(MesorregioesResource, '/mesorregioes')
+api.add_resource(MesorregioaResource, '/mesorregioes/<int:id>')
+api.add_resource(MicrorregioesResource, '/microrregioes')
+api.add_resource(MicrorregiaoResource, '/microrregioes/<int:id>')
+api.add_resource(UfsResource, '/ufs')
+api.add_resource(UfResource, '/ufs/<int:id>')
+api.add_resource(MunicipiosResource, '/municipios')
+api.add_resource(MunicipioResource, '/municipios/<int:id>')
 
 # Configuração da conexão com PostgreSQL
 DB_CONFIG = {
@@ -45,31 +57,31 @@ def get_instituicoes():
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 cursor.execute("""
                     SELECT
-                        i.codEntidade,
-                        i.entidade,
-                        i.codMunicipio,
-                        m.nomeMunicipio,
-                        i.codUF,
-                        uf.nomeEstado,
-                        mi.codMicrorregiao,
-                        mi.microrregiao,
-                        me.codMesorregiao,
-                        me.mesorregiao,
-                        i.matriculas_base
-                    FROM tb_instituicao i
-                    JOIN tb_Municipio m ON i.codMunicipio = m.idMunicipio
-                    JOIN tb_Microrregiao mi ON m.codMicrorregiao = mi.codMicrorregiao
-                    JOIN tb_Mesorregiao me ON m.codMesorregiao = me.codMesorregiao
-                    JOIN tb_UF uf ON i.codUF = uf.codUF
+                        i."codentidade",
+                        i."entidade",
+                        i."codmunicipio",
+                        m."nomemunicipio",
+                        i."coduf",
+                        uf."nomeestado",
+                        mi."codmicrorregiao",
+                        mi."microrregiao",
+                        me."codmesorregiao",
+                        me."mesorregiao",
+                        i."matriculas_base"
+                    FROM "tb_instituicao" i
+                    JOIN "tb_Municipio" m ON i."codmunicipio" = m."idmunicipio"
+                    JOIN "tb_Microrregiao" mi ON m."codmicrorregiao" = mi."codmicrorregiao"
+                    JOIN "tb_Mesorregiao" me ON m."codmesorregiao" = me."codmesorregiao"
+                    JOIN "tb_UF" uf ON i."coduf" = uf."coduf"
                     LIMIT %s OFFSET %s;
                 """, (per_page, offset))
 
                 resultados = cursor.fetchall()
-
         return jsonify(resultados)
+
     except Exception as e:
         logger.error(f"Erro ao buscar instituições: {e}")
-        return jsonify({"erro": "Erro ao buscar dados"}), 500
+        return jsonify({"erro": "Erro ao buscar instituições"}), 500
 
 
 
@@ -83,11 +95,11 @@ def get_censo_escolar():
             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                 query = """
                     SELECT 
-                        uf.nomeEstado as estado,
+                        uf.nomeestado AS estado,
                         i.ano,
-                        SUM(i.matriculas_base) as total_matriculas
+                        SUM(i.matriculas_base) AS total_matriculas
                     FROM tb_instituicao i
-                    JOIN tb_UF uf ON i.codUF = uf.codUF
+                    JOIN "tb_UF" uf ON i.coduf = uf.coduf
                     WHERE 1=1
                 """
                 params = []
@@ -96,11 +108,11 @@ def get_censo_escolar():
                     query += " AND i.ano = %s"
                     params.append(int(ano))
                 
-                if estado and estado != 'Todos':
-                    query += " AND uf.nomeEstado = %s"
+                if estado and estado.lower() != 'todos':
+                    query += " AND uf.nomeestado = %s"
                     params.append(estado)
                 
-                query += " GROUP BY uf.nomeEstado, i.ano ORDER BY uf.nomeEstado"
+                query += " GROUP BY uf.nomeestado, i.ano ORDER BY uf.nomeestado"
                 
                 cursor.execute(query, params)
                 resultados = cursor.fetchall()

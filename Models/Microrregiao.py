@@ -21,7 +21,7 @@ tb_Microrregiao_fields = {
 class tb_Microrregiao(db.Model):
     __tablename__ = "tb_Microrregiao"
 
-    codmicrorregiao: Mapped[int] = mapped_column('codmicrorregiao', Integer, primary_key=True)
+    codmicrorregiao: Mapped[int] = mapped_column('codmicrorregiao', Integer, primary_key=True, autoincrement=True)
     microrregiao: Mapped[str] = mapped_column('microrregiao', String)
     codmesorregiao: Mapped[int] = mapped_column('codmesorregiao', ForeignKey('tb_Mesorregiao.codmesorregiao'))
     coduf: Mapped[int] = mapped_column('coduf', ForeignKey('tb_UF.coduf'))
@@ -32,8 +32,7 @@ class tb_Microrregiao(db.Model):
     mesorregiao: Mapped[tb_Mesorregiao] = relationship("tb_Mesorregiao", back_populates="microrregioes")
     municipios: Mapped[List[tb_Municipio]] = relationship("tb_Municipio", back_populates="microrregiao")
 
-    def __init__(self, codmicrorregiao: int, microrregiao: str, codmesorregiao: int, coduf: int, regiao: str):
-        self.codmicrorregiao = codmicrorregiao
+    def __init__(self, microrregiao: str, codmesorregiao: int, coduf: int, regiao: str):
         self.microrregiao = microrregiao
         self.codmesorregiao = codmesorregiao
         self.coduf = coduf

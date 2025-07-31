@@ -1,8 +1,7 @@
+import json
 import psycopg2
 import csv
-import json
 
-# Configuração da conexão PostgreSQL
 DB_CONFIG = {
     'dbname': 'censoescolar',
     'user': 'postgres',
@@ -11,139 +10,81 @@ DB_CONFIG = {
     'port': 5432
 }
 
-SCHEMA_FILE = "schemas.sql"
-CSV_FILES = ["censo_escolar2023.csv", "censo_escolar2024.csv"]
+# Caminhos dos arquivos JSON
 JSON_ESTADOS_FILE = "estados_brasil.json"
-JSON_MUNICIPIOS_FILE = "municipios_brasil.json"
 JSON_MESORREGIOES_FILE = "mesorregioes_brasil.json"
 JSON_MICRORREGIOES_FILE = "microrregioes_brasil.json"
+JSON_MUNICIPIOS_FILE = "municipios_brasil.json"
+CSV_FILES = ["censo_escolar2023.csv", "censo_escolar2024.csv"]
 
-
-for key, value in DB_CONFIG.items():
-    try:
-        if isinstance(value, str):
-            print(f"{key}: {value} -> {value.encode('utf-8')}")
-        else:
-            print(f"{key}: {value} (tipo {type(value)})")
-    except UnicodeEncodeError as e:
-        print(f"Erro de codificação em {key}: {value}")
-
-# Executar schema
 with psycopg2.connect(**DB_CONFIG) as conn:
     with conn.cursor() as cursor:
-        with open(SCHEMA_FILE, "r", encoding="utf-8-sig") as schema_file:
-            cursor.execute(schema_file.read())
-        conn.commit()
 
-# Inserir estados
-with psycopg2.connect(**DB_CONFIG) as conn:
-    with conn.cursor() as cursor:
-        with open(JSON_ESTADOS_FILE, "r", encoding="utf-8") as json_file:
-            estados = json.load(json_file)
-
-        for estado in estados:
-            id_estado = int(estado["codUF"])
-            uf = estado["UF"].strip()
-            nome_estado = estado["nomeEstado"].strip()
-            regiao = estado["região"].strip()
-
+        # UF
+        with open(JSON_ESTADOS_FILE, "r", encoding="utf-8") as file:
+            estados = json.load(file)
+        for uf in estados:
             cursor.execute("""
-                INSERT INTO tb_UF (
-                    codUF, UF, nomeEstado, regiao
-                ) VALUES (%s, %s, %s, %s)
-                ON CONFLICT (codUF) DO UPDATE SET
-                    UF = EXCLUDED.UF,
-                    nomeEstado = EXCLUDED.nomeEstado,
+                INSERT INTO "tb_UF" (coduf, uf, nomeestado, regiao)
+                VALUES (%s, %s, %s, %s)
+                ON CONFLICT (coduf) DO UPDATE SET
+                    uf = EXCLUDED.uf,
+                    nomeestado = EXCLUDED.nomeestado,
                     regiao = EXCLUDED.regiao
-            """, (id_estado, uf, nome_estado, regiao))
+            """, (int(uf["codUF"]), uf["UF"].strip(), uf["nomeEstado"].strip(), uf["região"].strip()))
 
-        conn.commit()
-
-# Inserir mesorregiões
-with psycopg2.connect(**DB_CONFIG) as conn:
-    with conn.cursor() as cursor:
-        with open(JSON_MESORREGIOES_FILE, "r", encoding="utf-8") as json_file:
-            mesorregioes = json.load(json_file)
-
-        for row in mesorregioes:
-            codMesorregiao = int(row["codMesorregiao"])
-            mesorregiao = row["mesorregiao"].strip()
-            codUF = int(row["codUF"])
-            regiao = row["regiao"].strip()
-
+        # Mesorregião
+        with open(JSON_MESORREGIOES_FILE, "r", encoding="utf-8") as file:
+            mesorregioes = json.load(file)
+        for meso in mesorregioes:
             cursor.execute("""
-                INSERT INTO tb_Mesorregiao (
-                    codMesorregiao, mesorregiao, codUF, regiao
-                ) VALUES (%s, %s, %s, %s)
-                ON CONFLICT (codMesorregiao) DO UPDATE SET
+                INSERT INTO "tb_Mesorregiao" (codmesorregiao, mesorregiao, coduf, regiao)
+                VALUES (%s, %s, %s, %s)
+                ON CONFLICT (codmesorregiao) DO UPDATE SET
                     mesorregiao = EXCLUDED.mesorregiao,
-                    codUF = EXCLUDED.codUF,
+                    coduf = EXCLUDED.coduf,
                     regiao = EXCLUDED.regiao
-            """, (
-                codMesorregiao, mesorregiao, codUF, regiao
-            ))
-        conn.commit()
+            """, (int(meso["codMesorregiao"]), meso["mesorregiao"].strip(), int(meso["codUF"]), meso["regiao"].strip()))
 
-# Inserir microrregiões
-with psycopg2.connect(**DB_CONFIG) as conn:
-    with conn.cursor() as cursor:
-        with open(JSON_MICRORREGIOES_FILE, "r", encoding="utf-8") as json_file:
-            microrregioes = json.load(json_file)
-
-        for row in microrregioes:
-            codMicrorregiao = int(row["codMicrorregiao"])
-            microrregiao = row["microrregiao"].strip()
-            codMesorregiao = int(row["codMesorregiao"])
-            codUF = int(row["codUF"])
-            regiao = row["regiao"].strip()
-
+        # Microrregião
+        with open(JSON_MICRORREGIOES_FILE, "r", encoding="utf-8") as file:
+            microrregioes = json.load(file)
+        for micro in microrregioes:
             cursor.execute("""
-                INSERT INTO tb_Microrregiao (
-                    codMicrorregiao, microrregiao, codMesorregiao,
-                    codUF, regiao
-                ) VALUES (%s, %s, %s, %s, %s)
-                ON CONFLICT (codMicrorregiao) DO UPDATE SET
+                INSERT INTO "tb_Microrregiao" (codmicrorregiao, microrregiao, codmesorregiao, coduf, regiao)
+                VALUES (%s, %s, %s, %s, %s)
+                ON CONFLICT (codmicrorregiao) DO UPDATE SET
                     microrregiao = EXCLUDED.microrregiao,
-                    codMesorregiao = EXCLUDED.codMesorregiao,
-                    codUF = EXCLUDED.codUF,
+                    codmesorregiao = EXCLUDED.codmesorregiao,
+                    coduf = EXCLUDED.coduf,
                     regiao = EXCLUDED.regiao
             """, (
-                codMicrorregiao, microrregiao, codMesorregiao,
-                codUF, regiao
+                int(micro["codMicrorregiao"]), micro["microrregiao"].strip(), int(micro["codMesorregiao"]),
+                int(micro["codUF"]), micro["regiao"].strip()
             ))
-        conn.commit()
 
-# Inserir municípios 
-with psycopg2.connect(**DB_CONFIG) as conn:
-    with conn.cursor() as cursor:
-        with open(JSON_MUNICIPIOS_FILE, "r", encoding="utf-8") as json_file:
-            municipios = json.load(json_file)
-
-        for row in municipios:
-            idMunicipio = int(row["idMunicipio"])
-            nomeMunicipio = row["nomeMunicipio"].strip()
-            codUF = int(row["codUF"])
-            regiao = row["regiao"].strip()
-            codMesorregiao = int(row["codMesorregiao"])
-            codMicrorregiao = int(row["codMicrorregiao"])
-
+        # Município
+        with open(JSON_MUNICIPIOS_FILE, "r", encoding="utf-8") as file:
+            municipios = json.load(file)
+        for municipio in municipios:
             cursor.execute("""
-                INSERT INTO tb_Municipio (
-                    idMunicipio, nomeMunicipio, codUF,
-                    regiao, codMesorregiao, codMicrorregiao
-                ) VALUES (%s, %s, %s, %s, %s, %s)
-                ON CONFLICT (idMunicipio) DO UPDATE SET
-                    nomeMunicipio = EXCLUDED.nomeMunicipio,
-                    codUF = EXCLUDED.codUF,
+                INSERT INTO "tb_Municipio" (idmunicipio, nomemunicipio, coduf, regiao, codmesorregiao, codmicrorregiao)
+                VALUES (%s, %s, %s, %s, %s, %s)
+                ON CONFLICT (idmunicipio) DO UPDATE SET
+                    nomemunicipio = EXCLUDED.nomemunicipio,
+                    coduf = EXCLUDED.coduf,
                     regiao = EXCLUDED.regiao,
-                    codMesorregiao = EXCLUDED.codMesorregiao,
-                    codMicrorregiao = EXCLUDED.codMicrorregiao
+                    codmesorregiao = EXCLUDED.codmesorregiao,
+                    codmicrorregiao = EXCLUDED.codmicrorregiao
             """, (
-                idMunicipio, nomeMunicipio, codUF,
-                regiao, codMesorregiao, codMicrorregiao
+                int(municipio["idMunicipio"]), municipio["nomeMunicipio"].strip(), int(municipio["codUF"]),
+                municipio["regiao"].strip(), int(municipio["codMesorregiao"]), int(municipio["codMicrorregiao"])
             ))
-        conn.commit()
 
+        # Instituição
+def normalize_key(key: str) -> str:
+    
+    return key.strip().lower()
 
 with psycopg2.connect(**DB_CONFIG) as conn:
     with conn.cursor() as cursor:
@@ -151,40 +92,53 @@ with psycopg2.connect(**DB_CONFIG) as conn:
             with open(csv_file_name, "r", encoding="utf-8-sig") as csv_file:
                 reader = csv.DictReader(csv_file, delimiter=';')
 
+                
+                normalized_keys = {normalize_key(k): k for k in reader.fieldnames}
+
                 for row in reader:
-                    def parse_int(field):
-                        value = row[field].strip()
-                        return int(float(value)) if value else 0
+                    
+                    def get_value(field_normalized):
+                        key_original = normalized_keys.get(field_normalized)
+                        if key_original is None:
+                            raise KeyError(f"Campo '{field_normalized}' não encontrado no CSV")
+                        return row[key_original].strip()
 
-                    codEntidade = parse_int('codEntidade')
-                    entidade = row['entidade'].strip()
-                    codRegiao = parse_int('codRegiao')
-                    regiao = row['regiao'].strip()
-                    codUF = parse_int('codUF')
-                    UF = row['UF'].strip()
-                    codMunicipio = parse_int('codMunicipio')
-                    municipio = row['municipio'].strip()
-                    matriculas_base = parse_int('matriculas_base')  
-                    ano = parse_int('ano')
+                    try:
+                        codentidade = int(float(get_value('codentidade')))
+                        entidade = get_value('entidade')
+                        codregiao = int(float(get_value('codregiao')))
+                        regiao = get_value('regiao')
+                        coduf = int(float(get_value('coduf')))
+                        uf = get_value('uf')
+                        codmunicipio = int(float(get_value('codmunicipio')))
+                        municipio = get_value('municipio')
+                        matriculas_base_str = get_value('matriculas_base').replace('.', '')  # tira ponto se tiver
+                        matriculas_base = int(matriculas_base_str) if matriculas_base_str else 0
+                        ano = int(float(get_value('ano')))
 
-                    cursor.execute("""
-                        INSERT INTO tb_instituicao (
-                            codEntidade, entidade, codRegiao, regiao, codUF, UF,
-                            codMunicipio, municipio, matriculas_base, ano
-                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                        ON CONFLICT (codEntidade, ano) DO UPDATE SET
-                            entidade = EXCLUDED.entidade,
-                            codRegiao = EXCLUDED.codRegiao,
-                            regiao = EXCLUDED.regiao,
-                            codUF = EXCLUDED.codUF,
-                            UF = EXCLUDED.UF,
-                            codMunicipio = EXCLUDED.codMunicipio,
-                            municipio = EXCLUDED.municipio,
-                            matriculas_base = EXCLUDED.matriculas_base
-                    """, (
-                        codEntidade, entidade, codRegiao, regiao, codUF, UF,
-                        codMunicipio, municipio, matriculas_base, ano
-                    ))
+                        cursor.execute("""
+                            INSERT INTO tb_instituicao (
+                                codentidade, entidade, codregiao, regiao, coduf, uf,
+                                codmunicipio, municipio, matriculas_base, ano, created
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
+                            ON CONFLICT (codentidade, ano) DO UPDATE SET
+                                entidade = EXCLUDED.entidade,
+                                codregiao = EXCLUDED.codregiao,
+                                regiao = EXCLUDED.regiao,
+                                coduf = EXCLUDED.coduf,
+                                uf = EXCLUDED.uf,
+                                codmunicipio = EXCLUDED.codmunicipio,
+                                municipio = EXCLUDED.municipio,
+                                matriculas_base = EXCLUDED.matriculas_base,
+                                ano = EXCLUDED.ano
+                        """, (
+                            codentidade, entidade, codregiao, regiao, coduf, uf,
+                            codmunicipio, municipio, matriculas_base, ano
+                        ))
+
+                    except Exception as e:
+                        print(f"Erro ao inserir linha com codentidade {row.get('codentidade', 'desconhecido')}: {e}")
+
         conn.commit()
 
-print("✅ Todos os dados foram inseridos com sucesso no PostgreSQL.")
+print("✅ Dados das instituições inseridos com sucesso!")
