@@ -27,7 +27,7 @@ class tb_instituicao(db.Model):
     __tablename__ = "tb_instituicao"
     
     regiao: Mapped[str] = mapped_column(String)
-    codregiao: Mapped[int] = mapped_column('codregiao', Integer)  # Nome exato da coluna
+    codregiao: Mapped[int] = mapped_column('codregiao', Integer) 
     uf: Mapped[str] = mapped_column('uf', String)
     coduf: Mapped[int] = mapped_column('coduf', Integer)
     municipio: Mapped[str] = mapped_column(String)

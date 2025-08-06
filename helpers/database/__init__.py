@@ -7,31 +7,16 @@ from helpers.application import app
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 
+from flask_migrate import Migrate
+
 class Base(DeclarativeBase):
     pass
 
 
 db = SQLAlchemy(model_class=Base)
-
 db.init_app(app)
+migrate = Migrate(app, db)
 
-DATABASE = 'censoescolar'
-
-
-def getConnection():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = psycopg2.connect(
-            dbname=DATABASE,
-            user='postgres',
-            password='!@LuizInacio008',
-            host='localhost',
-            port='5432'
-        )
-    return db
-
-@app.teardown_appcontext
-def closeConnection(exception):
-    db = getattr(g, '_database', None)
-    if db is not None:
-        db.close()
+#flask db init
+#flask db migrate -m "mensagem"
+#flask db upgrade

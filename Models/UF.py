@@ -25,7 +25,7 @@ class tb_UF(db.Model):
     nome_estado: Mapped[str] = mapped_column('nomeestado', String)
     regiao: Mapped[str] = mapped_column('regiao', String)
 
-    # Relacionamentos corrigidos (nomes consistentes)
+    
     mesorregioes: Mapped[List[tb_Mesorregiao]] = relationship(
         "tb_Mesorregiao", 
         back_populates="uf",

@@ -4,7 +4,7 @@ from psycopg2.extras import RealDictCursor
 from marshmallow import ValidationError
 
 from helpers.application import app, api
-from helpers.database import getConnection, db 
+from helpers.database import db 
 from helpers.logging import logger
 from helpers.CORS import cors
 
@@ -125,6 +125,3 @@ def get_censo_escolar():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-    with app.app_context():
-        db.create_all()

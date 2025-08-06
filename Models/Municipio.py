@@ -30,7 +30,7 @@ class tb_Municipio(db.Model):
     codmesorregiao: Mapped[int] = mapped_column('codmesorregiao', ForeignKey('tb_Mesorregiao.codmesorregiao'))
     codmicrorregiao: Mapped[int] = mapped_column('codmicrorregiao', ForeignKey('tb_Microrregiao.codmicrorregiao'))
 
-    # Relacionamentos corrigidos
+    
     uf: Mapped[tb_UF] = relationship("tb_UF", back_populates="municipios")
     mesorregiao: Mapped[tb_Mesorregiao] = relationship("tb_Mesorregiao", back_populates="municipios")
     microrregiao: Mapped[tb_Microrregiao] = relationship("tb_Microrregiao", back_populates="municipios")
