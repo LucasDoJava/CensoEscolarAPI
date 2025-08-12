@@ -25,7 +25,7 @@ class tb_Mesorregiao(db.Model):
     coduf: Mapped[int] = mapped_column('coduf', ForeignKey('tb_UF.coduf'))
     regiao: Mapped[str] = mapped_column('regiao', String)
 
-    # Relacionamentos corrigidos
+   
     uf: Mapped[tb_UF] = relationship("tb_UF", back_populates="mesorregioes")
     
     microrregioes: Mapped[List[tb_Microrregiao]] = relationship(
